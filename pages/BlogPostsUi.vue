@@ -35,6 +35,7 @@ const getPosts = async () => {
 };
 
 getPosts();
+const toast = useToast()
 const items = (row:any) => [
   [{
     label: 'Edit',
@@ -46,7 +47,22 @@ const items = (row:any) => [
     click: () => navigateTo(`/BlogPost/${row.id}`)
   }], [{
     label: 'Delete',
-    icon: 'i-heroicons-trash-20-solid'
+    icon: 'i-heroicons-trash-20-solid',
+    click: () => {
+      $fetch(`http://localhost:8000/api/blog/posts/delete/${row.id}`,{
+        method: 'DELETE',
+        body: {id: row.id}
+      })
+          .then(res => {
+            console.log(res);
+            toast.add({ title: 'Success', description: 'Post was deleted' });
+            getPosts();
+          })
+          .catch(error => {
+            console.error(error);
+            alert('Failed to delete post!');
+          });
+    }
   }]
 ]
 const page = ref(1);

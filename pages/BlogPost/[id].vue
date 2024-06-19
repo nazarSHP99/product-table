@@ -53,8 +53,8 @@
               {{ tab }}
             </button>
             <div>
-              <p class="text-green-500">Created at {{ formatDate(post.created_at) }}</p>
-              <p class="text-yellow-500">Updated at {{ formatDate(post.updated_at) }}</p>
+              <p class="text-green-500 bg-slate-700 rounded p-2 mt-0.5">Created at {{ formatDate(post.created_at) }}</p>
+              <p class="text-yellow-500 bg-slate-700 rounded p-2 mt-0.5">Updated at {{ formatDate(post.updated_at) }}</p>
             </div>
             <div class="form-group mb-4">
               <label for="excerpt" class="block text-gray-100">Короткий текст</label>
