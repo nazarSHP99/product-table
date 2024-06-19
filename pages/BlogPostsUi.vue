@@ -78,6 +78,7 @@ const rows = computed(() => {
 </script>
 
 <template>
+  <UNotifications />
   <h1 class="text-center text-3xl my-[2%]">BlogPosts List</h1>
   <div class="mx-[3%] my-[2%]">
     <div class="flex justify-between items-center w-full px-4 py-3">
